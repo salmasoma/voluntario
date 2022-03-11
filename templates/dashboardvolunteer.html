@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="/static/bower/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/static/css/calendar.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/dashboard.css')}}">
+</head>
+
+<body>
+    <div class="container">
+        <div class="navigation">
+            <div class="ibm-tab-section">
+                <ul class="ibm-tabs" role="tablist">
+                    <li>
+                        <a href="#">
+                            <div class="logo-text">
+                                <span class="icon"><img src="/static/img/logo.svg" alt="" style="width: 50px;"></span>
+                                <span class="title" style="font-size: 1.5em;font-weight: 500; margin-left: 10px;">Voluntario</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a aria-selected="true" role="tab" href="#dashboard">
+                            <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+                            <span class="title active tab">Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a role="tab" href="#notifications">
+                            <span class="icon"><ion-icon name="notifications-outline"></ion-icon></span>
+                            <span class="title tab">Notifications</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a role="tab" href="#help">
+                            <span class="icon"><ion-icon name="calendar"></ion-icon></span>
+                            <span class="title tab">Calendar</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a role="tab" href="#settings">
+                            <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
+                            <span class="title tab">Settings</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a role="tab" href="#signout">
+                            <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
+                            <span class="title tab">Sign Out</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="dashboard" class="main ibm-tabs-content">
+            <div class="topbar">
+                <div class="toggle">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </div>
+                <!-- search -->
+                <div class="search">
+                    <label>
+                                <input type="text" placeholder="Search here">
+                                <ion-icon name="search-outline"></ion-icon>
+                            </label>
+                </div>
+                <!-- userImg -->
+                <div class="user">
+                    <ion-icon name="person" style="padding-top: 5px;"></ion-icon>
+                </div>
+            </div>
+            <!-- cards -->
+            <div class="cardBox">
+                <div class="card">
+                    <div>
+                        <div class="numbers">82</div>
+                        <div class="cardName">Hours Donated</div>
+                    </div>
+                    <div class="iconBx">
+                        <ion-icon name="time"></ion-icon>
+                    </div>
+                </div>
+                <div class="card">
+                    <div>
+                        <div class="numbers">12</div>
+                        <div class="cardName">Events Completed</div>
+                    </div>
+                    <div class="iconBx">
+                        <ion-icon name="list"></ion-icon>
+                    </div>
+                </div>
+                <div class="card">
+                    <div>
+                        <div class="numbers">13</div>
+                        <div class="cardName">Reviews</div>
+                    </div>
+                    <div class="iconBx">
+                        <ion-icon name="chatbubbles-outline"></ion-icon>
+                    </div>
+                </div>
+                <div class="card">
+                    <div>
+                        <div class="numbers">4.75</div>
+                        <div class="cardName">Rating</div>
+                    </div>
+                    <div class="iconBx">
+                        <ion-icon name="star"></ion-icon>
+                    </div>
+                </div>
+            </div>
+            <!-- Add Charts -->
+            <div class="graphBox">
+                <div class="box">
+                    <canvas id="myChart"></canvas>
+                </div>
+                <div class="box">
+                    <canvas id="hours"></canvas>
+                </div>
+            </div>
+            <div class="details">
+                <!-- order details list -->
+                <div class="recentEvents">
+                    <div class="cardHeader">
+                        <h2>Recent Events</h2>
+                        <a href="#" class="btn">View All</a>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>Name</td>
+                                <td>Hours</td>
+                                <td>Status</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Street Cleaning</td>
+                                <td>6</td>
+                                <td><span class="status inprogress">In Progress</span></td>
+                            </tr>
+                            <tr>
+                                <td>Dog Walking</td>
+                                <td>3</td>
+                                <td><span class="status pending">Pending</span></td>
+                            </tr>
+                            <tr>
+                                <td>Food Bank</td>
+                                <td>4</td>
+                                <td><span class="status completed">Completed</span></td>
+                            </tr>
+                            <tr>
+                                <td>Handing Flyers</td>
+                                <td>1</td>
+                                <td><span class="status absent">Absent</span></td>
+                            </tr>
+                            <tr>
+                                <td>Book Reading</td>
+                                <td>3</td>
+                                <td><span class="status completed">Completed</span></td>
+                            </tr>
+                            <tr>
+                                <td>Animal Shelter</td>
+                                <td>4</td>
+                                <td><span class="status completed">Completed</span></td>
+                            </tr>
+                            <tr>
+                                <td>Clothes Donations</td>
+                                <td>2</td>
+                                <td><span class="status absent">Absent</span></td>
+                            </tr>
+                            <tr>
+                                <td>Street Cleaning</td>
+                                <td>2</td>
+                                <td><span class="status completed">Completed</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div id="notifications" class="main ibm-tabs-content">
+            <div class="topbar">
+                <div class="toggle">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </div>
+                <!-- userImg -->
+                <div class="user">
+                    <ion-icon name="person" style="padding-top: 5px;"></ion-icon>
+                </div>
+            </div>
+            <h1>notification</h1>
+            <p>hello</p>
+        </div>
+        <div id="help" class="main ibm-tabs-content">
+            <div class="topbar">
+                <div class="toggle">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </div>
+                <!-- userImg -->
+                <div class="user">
+                    <ion-icon name="person" style="padding-top: 5px;"></ion-icon>
+                </div>
+            </div>
+            <h1 style="text-align: center; font-weight: bold;">My Calendar</h1>
+            <div class="calendar disable-selection" id="calendar">
+                <div class="left-side">
+                    <div class="current-day text-center">
+                        <h1 class="calendar-left-side-day"></h1>
+                        <div class="calendar-left-side-day-of-week"></div>
+                    </div>
+                    <div class="current-day-events">
+                        <div>Current Events:</div>
+                        <ul class="current-day-events-list"></ul>
+                    </div>
+                    <div class="add-event-day">
+                        <input type="text" class="add-event-day-field" placeholder="Create an Event">
+                        <span class="fa fa-plus-circle cursor-pointer add-event-day-field-btn"></span>
+                    </div>
+                </div>
+                <div class="right-side">
+                    <div class="text-right calendar-change-year">
+                        <div class="calendar-change-year-slider">
+                            <span class="fa fa-caret-left cursor-pointer calendar-change-year-slider-prev"></span>
+                            <span class="calendar-current-year"></span>
+                            <span class="fa fa-caret-right cursor-pointer calendar-change-year-slider-next"></span>
+                        </div>
+                    </div>
+                    <div class="calendar-month-list">
+                        <ul class="calendar-month"></ul>
+                    </div>
+                    <div class="calendar-week-list">
+                        <ul class="calendar-week"></ul>
+                    </div>
+                    <div class="calendar-day-list">
+                        <ul class="calendar-days"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="settings" class="main ibm-tabs-content">
+            <div class="topbar">
+                <div class="toggle">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </div>
+                <!-- userImg -->
+                <div class="user">
+                    <ion-icon name="person" style="padding-top: 5px;"></ion-icon>
+                </div>
+            </div>
+            <div class="details">
+                <h1>settings</h1>
+            </div>
+
+        </div>
+        <div id="signout" class="main ibm-tabs-content">
+            <h1>sign out</h1>
+        </div>
+
+        <!-- main -->
+
+    </div>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+    <script src="/static/js/dashboard_my_chart.js"></script>
+    <script async src="/static/js/calendar.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script>
+        $(function() {
+            $("#help").show();
+        });
+        $('.ibm-tabs li a').on('click', function(e) {
+            e.preventDefault();
+            $('.ibm-tabs-content').hide();
+            let IDSelector = $(this).attr('href');
+            $(IDSelector).show();
+        })
+    </script>
+    <script>
+        // MenuToggle
+        let toggle = document.querySelector('.toggle');
+        let navigation = document.querySelector('.navigation');
+        let main = document.querySelector('.main');
+
+        toggle.onclick = function() {
+            navigation.classList.toggle('active');
+            main.classList.toggle('active');
+        }
+
+        // add hovered class in selected list item
+        let list = document.querySelectorAll('.navigation li');
+
+        function activeLink() {
+            list.forEach((item) =>
+                item.classList.remove('hovered'));
+            this.classList.add('hovered');
+        }
+        list.forEach((item) =>
+            item.addEventListener('mouseover', activeLink));
+    </script>
+</body>
+
+</html>
