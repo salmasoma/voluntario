@@ -92,7 +92,7 @@ import '../style.css'
                 <div class="card">
                     <div>
                         <div class="numbers">13</div>
-                        <div class="cardName">Reviews</div>
+                        <div class="cardName">Review</div>
                     </div>
                     <div class="iconBx">
                         <ion-icon name="chatbubbles-outline"></ion-icon>
