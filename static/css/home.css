@@ -224,14 +224,10 @@ intro-section,
 
 .intro-section p {
     color: black;
-    font-size: 20px;
+    font-size: 14px;
     font-family: 'Poppins', sans-serif;
     max-width: 400px;
     vertical-align: center;
-}
-
-.slide-text {
-    padding: 270px 0;
 }
 
 .custom-owl-carousel .owl-custom-direction a {
@@ -423,7 +419,7 @@ intro-section,
     height: 3px;
     width: 100%;
     border-radius: 4px;
-    background: #000;
+    background: #fff;
     border-radius: 2px;
     opacity: 1;
     right: 0;
@@ -504,7 +500,7 @@ intro-section,
     .intro-section:before {
         height: 100%;
         width: 100%!important;
-        background: black;
+        background: white;
         border-bottom-right-radius: 0px!important;
     }
     .intro-section {
@@ -533,7 +529,7 @@ intro-section,
     position: relative;
     width: calc(100% * (1/4) - 10px - 1px);
     height: 280px;
-    background: black;
+    background: white;
     border-radius: 20px;
     overflow: hidden;
 }
@@ -543,7 +539,7 @@ intro-section,
         position: relative;
         width: 100%;
         height: 280px;
-        background: black;
+        background: white;
         border-radius: 20px;
         overflow: hidden;
     }

@@ -1,0 +1,53 @@
+.search {
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/static/img/volunteer.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    z-index: 999;
+}
+
+.search-title {
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 70px;
+    font-size: 45px;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.search-feild {
+    height: 50px;
+    padding: 10px;
+    border: none;
+    border-radius: 25px;
+    outline: none;
+}
+
+.event {
+    width: 400px;
+}
+
+.location {
+    width: 200px;
+}
+
+.search-btn {
+    height: 50px;
+    width: 150px;
+    background-color: #ff0058;
+    border: none;
+    color: white;
+    border-radius: 25px;
+}
+
+.search-btn:hover {
+    border: 1px solid #dc3545;
+    color: #dc3545;
+    text-decoration: none;
+    background-color: transparent;
+}
